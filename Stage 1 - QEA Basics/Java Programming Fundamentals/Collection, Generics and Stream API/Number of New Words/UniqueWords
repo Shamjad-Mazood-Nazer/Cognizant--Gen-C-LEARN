@@ -1,0 +1,51 @@
+//import the necessary packages if needed
+import java.util.*;
+     
+@SuppressWarnings("unchecked")//Do not delete this line
+public class UniqueWords
+{
+    public static void main (String[] args) {
+        int uniqueCount = 0;
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Enter Student's Article");
+        String article = sc.nextLine();
+        String[] allWordsCount = article.split(" ");
+        
+        TreeSet<String> ts =new TreeSet<String>(Arrays.asList(article.toLowerCase().split("[,.?!;:~ ]+")));
+        
+        Iterator itr = ts.iterator();
+        
+        System.out.println("Number of words "+allWordsCount.length);
+        System.out.println("Number of unique words "+ts.size());
+        System.out.println("The words are");
+        
+        int x=1;
+        
+        while(itr.hasNext()){
+            System.out.println(x+". "+itr.next());
+            x+=1;
+        }
+        /*for (int i=0; i<allWords.length; i++){
+            totalWord = 1;
+            for (int j = i+1; j<allWords.length; j++){
+                if (allWords[i].equalsIgnoreCase(allWords[j])){
+                    totalWord+=1;
+                    allWords[j]="";
+                } 
+            } 
+        } */
+        
+        //Collections.sort(arrlst);
+        
+        /*int x=1;
+        for (String s : set1){
+            if (Collections.frequency(set1, s) == 1){
+                System.out.println(x+". "+s);
+                x++;
+            } 
+        } */
+        
+    }      
+}

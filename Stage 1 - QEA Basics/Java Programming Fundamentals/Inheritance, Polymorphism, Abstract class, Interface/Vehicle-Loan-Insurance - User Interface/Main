@@ -1,0 +1,11 @@
+import java.util.Scanner;
+public class Main
+{
+    public static void main(String[] args)
+    {
+       Scanner sc = new Scanner(System.in);
+       Vehicle v = new Vehicle("KL038055", "KTM RC390", "2 wheeler", 280000);
+       System.out.println(v.issueLoan());
+       System.out.println(v.takeInsurance());
+    }
+}

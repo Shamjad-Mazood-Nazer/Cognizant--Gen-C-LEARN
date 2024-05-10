@@ -1,0 +1,26 @@
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class FlightManagementSystem {
+    public boolean addFlight(Flight flight){
+     try {
+         Connection con = DB.getConnection();
+         String query = "INSERT INTO FLIGHT (flightId, source, destination, noofseats, flightfare) VALUES (?, ?, ?, ?, ?);";
+         
+         PreparedStatement ps = con.prepareStatement(query);
+         ps.setInt(1, flight.getFlightId());
+         ps.setString(2, flight.getSource());
+         ps.setString(3, flight.getDestination());
+         ps.setInt(4, flight.getNoOfSeats());
+         ps.setDouble(5, flight.getFlightFare());
+         
+         ps.execute();
+         return true;
+         
+     } catch(ClassNotFoundException | SQLException e) {
+         e.printStackTrace();
+     }
+     return false;
+    }
+}

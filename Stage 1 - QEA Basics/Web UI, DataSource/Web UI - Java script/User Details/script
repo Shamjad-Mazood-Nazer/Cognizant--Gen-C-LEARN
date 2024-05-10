@@ -1,0 +1,60 @@
+function validate() {
+
+    var name = document.getElementById("name").value;
+
+    var mobile = document.getElementById("mobile").value; // Fill your code to get the mobile number element - by id "mobile" and store it in the variable "mobile"
+    var email = document.getElementById("email").value; // Fill your code to get the emailid element - by id "email" and store it in the variable "email" 
+
+    // HINT: use the above "name" as sample to get "mobile" and "email"
+
+    if (validateName(name) && validateMobile(mobile) && validateEmail(email))
+        document.getElementById("result").innerHTML = "Valid Values in form";
+    else
+        document.getElementById("result").innerHTML = "Invalid Values in form";
+}
+
+
+function validateName(name) {
+    var letters = /^[A-Za-z]+$/;
+    // Fill your code here
+    // HINT : using the syntax => name.match(letters)
+    // find whether 'name' contains alphabets only. 'match' method returns true, if 'name' contains only alphabets.
+    // Return true or false 
+
+    if (name.match(letters)) {
+        return true;
+    }
+    else {
+        return false;
+    }
+
+}
+
+function validateMobile(mobile) {
+    var digits = /^[0-9]+$/;
+    // Fill your code here
+    // HINT : using the syntax => mobile.match(digits)
+    // find whether 'mobile' contains numbers only. 'match' method returns true, if 'mobile' contains only numbers.
+    // Return true or false 
+
+    if (mobile.match(digits)) {
+        return true;
+    } else {
+        return false;
+    }
+
+}
+
+function validateEmail(email) {
+    // Fill your code here to check whether the 'email' has '@' symbol and '.' symbol
+    // HINT : email.includes("@") will return true, if the email has '@' symbol.
+    // find whether email has both '@' and '.'
+    // Return true or false
+
+    if (email.includes("@") && email.includes(".")) {
+        return true;
+    } else {
+        return false;
+    }
+
+}

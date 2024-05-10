@@ -1,0 +1,83 @@
+import java.util.Scanner;
+
+public class Main{
+    public static Hosteller getHostellerDetails(){
+        Scanner sc = new Scanner(System.in);
+        
+        String StudentName, Gender, Phone, HostelName,NewPhone;
+        char RoomChoice, PhoneChoice;
+        int RoomNumber, NewRoomNumber, DepartmentID, StudentID;
+        
+        Hosteller h1 = new Hosteller();
+        
+        System.out.println("Enter the Details:");
+        System.out.println("StudentID");
+        StudentID = sc.nextInt();
+        h1.setStudentId(StudentID);
+        
+        System.out.println("Student Name");
+        StudentName = sc.nextLine();
+        h1.setName(StudentName);
+        
+        System.out.println("Department Id");
+        DepartmentID = sc.nextInt();
+        h1.setDepartmentId(DepartmentID);
+        
+        System.out.println("Gender");
+        Gender = sc.nextLine();
+        h1.setGender(Gender);
+        
+        System.out.println("Phone Number");
+        Phone = sc.nextLine();
+        h1.setPhone(Phone);
+        
+        System.out.println("Hostel Name");
+        HostelName = sc.nextLine();
+        h1.setHostelName(HostelName);
+        
+        System.out.println("Room Number");
+        RoomNumber = sc.nextInt();
+        h1.setRoomNumber(RoomNumber);
+        
+        System.out.println("Modify Room Number(Y/N)");
+        RoomChoice = sc.next().charAt(0);
+        if (RoomChoice == 'Y'){
+            System.out.println("New Room Number");
+            NewRoomNumber = sc.nextInt();
+            h1.setRoomNumber(NewRoomNumber);
+            
+            System.out.println("Modify Phone Number");
+            PhoneChoice = sc.next().charAt(0);
+            
+            if (PhoneChoice == 'Y'){
+                System.out.println("New Phone Number");
+                NewPhone = sc.nextLine();
+                h1.setPhone(NewPhone);
+                
+                // h1 = new Hosteller(StudentID, DepartmentID, StudentName, Gender, NewPhone, HostelName, NewRoomNumber);
+                
+            } 
+
+            // h1 = new Hosteller(StudentID, StudentName, DepartmentID, Gender, Phone, HostelName, RoomNumber, NewRoomNumber, NewPhone);
+            
+        } 
+        else if (RoomChoice == 'N'){
+            System.out.println("Modify Phone Number");
+            PhoneChoice = sc.next().charAt(0);
+            
+            if (PhoneChoice == 'Y'){
+                System.out.println("New Phone Number");
+                NewPhone = sc.nextLine();
+                h1.setPhone(NewPhone);
+                
+                // h1 = new Hosteller(StudentID, DepartmentID, StudentName, Gender, NewPhone, HostelName, RoomNumber);
+            } 
+            
+        } 
+         return h1;
+    }
+    public static void main (String[] args) {
+        Hosteller h2 = getHostellerDetails();
+    }
+   
+}

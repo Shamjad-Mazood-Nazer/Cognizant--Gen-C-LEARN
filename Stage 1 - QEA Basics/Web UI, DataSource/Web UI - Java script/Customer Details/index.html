@@ -1,0 +1,39 @@
+<!--Do not make any change in this code template -->
+<html>
+
+<head>
+    <script src="script.js" type="text/javascript"> </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Search for Genres</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" id="name"></td>
+        </tr>
+        <tr>
+            <td>List of Genres:</td>
+            <td><input type="checkbox" name="genres" value="Poetry ">Poetry
+                <input type="checkbox" name="genres" value="Fiction">Fiction
+                <input type="checkbox" name="genres" value="Non-fiction">Non-fiction
+                <input type="checkbox" name="genres" value="Drama">Drama<br>
+                <input type="checkbox" name="genres" value="Mystery">Mystery
+                <input type="checkbox" name="genres" value="Biography">Biography
+                <input type="checkbox" name="genres" value="Sci-Fi">Science Fiction
+            </td>
+        </tr>
+        <tr>
+            <td>Enter the first character of the genre (in caps) :</td>
+            <td><input type="text" id="character"></td>
+        </tr>
+    </table>
+    <p>
+        <input type="button" id="gen" onclick='searchGenres()' value="Search for the Genre" />
+    </p>
+    <div id="result"></div>
+</body>
+
+</html>
