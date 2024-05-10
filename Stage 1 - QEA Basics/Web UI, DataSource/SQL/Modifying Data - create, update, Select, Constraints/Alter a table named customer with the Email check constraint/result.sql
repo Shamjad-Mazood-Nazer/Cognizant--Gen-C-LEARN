@@ -1,5 +1,4 @@
 ALTER TABLE customer
-ADD CONSTRAINT ck_email
-CHECK (email LIKE '%@%.%');
+ADD CONSTRAINT ck_email CHECK (email LIKE '%@%.%');
 
 Go

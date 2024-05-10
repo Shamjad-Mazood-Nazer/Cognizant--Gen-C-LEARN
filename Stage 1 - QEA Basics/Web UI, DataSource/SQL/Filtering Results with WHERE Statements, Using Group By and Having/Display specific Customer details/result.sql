@@ -1,7 +1,9 @@
 select first_name,
+    id,
     email,
     phone_number
 from customer
-order by first_name asc;
+where first_name like 'M%e%a'
+order by id asc;
 
-go
+GO

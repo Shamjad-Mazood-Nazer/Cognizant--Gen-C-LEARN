@@ -7,4 +7,5 @@ CREATE TABLE address (
     country varchar(30) not null,
     zip_code varchar(30) not null
 );
+
 go
