@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="364f4ad7-8a8c-4aa3-a1cb-7b0cc99b7ffa" activeEnvironment="Default" name="TrainService" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config">
+	<con:settings />
+	<con:interface xsi:type="con:RestService" id="7c043b12-a9d0-4138-8df0-567cb6e7a36a" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://webapps.tekstac.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<con:settings />
+		<con:definitionCache type="TEXT" rootPart="" />
+		<con:endpoints>
+			<con:endpoint>https://webapps.tekstac.com</con:endpoint>
+		</con:endpoints>
+		<con:resource name="ViewTrainList" path="/TrainAPI/TrainService/viewTrainList" id="75a3cc2c-4d76-4850-ac37-5765d94cdd58">
+			<con:settings />
+			<con:parameters />
+			<con:method name="viewTrainList" id="a4d3fbb5-3b46-4573-a809-17dcfa231538" method="GET">
+				<con:settings />
+				<con:parameters />
+				<con:representation type="RESPONSE">
+					<con:mediaType>application/xml</con:mediaType>
+					<con:status>200</con:status>
+					<con:params />
+					<con:element>trains</con:element>
+				</con:representation>
+				<con:request name="Request 1" id="6299948e-ff6b-4e2e-8dac-4cb6f26953e2" mediaType="application/json">
+					<con:settings>
+						<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+					</con:settings>
+					<con:endpoint>https://webapps.tekstac.com</con:endpoint>
+					<con:request />
+					<con:originalUri>https://webapps.tekstac.com/TrainAPI/TrainService/viewTrainList</con:originalUri>
+					<con:credentials>
+						<con:authType>No Authorization</con:authType>
+					</con:credentials>
+					<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+					<con:jmsPropertyConfig />
+					<con:parameters />
+				</con:request>
+			</con:method>
+		</con:resource>
+	</con:interface>
+	<con:testSuite id="25189365-bc72-46c3-914f-f2e8efe5a58c" name="ViewTrain">
+		<con:settings />
+		<con:runType>SEQUENTIAL</con:runType>
+		<con:testCase id="74ef1fb8-0aea-4d9b-84f3-e52c85752038" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="ViewTestCase" searchProperties="true">
+			<con:settings />
+			<con:testStep type="restrequest" name="Request1" id="ad7f16ed-e9d3-4240-aaed-3a8beedf01c0">
+				<con:settings />
+				<con:config service="https://webapps.tekstac.com" methodName="viewTrainList" resourcePath="/TrainAPI/TrainService/viewTrainList" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+					<con:restRequest name="Request1" id="a37e7a44-0e0b-4e6e-a5fe-b7c97c24d7ab" mediaType="application/json">
+						<con:settings>
+							<con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+						</con:settings>
+						<con:encoding>UTF-8</con:encoding>
+						<con:endpoint>https://webapps.tekstac.com</con:endpoint>
+						<con:request />
+						<con:originalUri>https://webapps.tekstac.com/TrainAPI/TrainService/viewTrainList</con:originalUri>
+						<con:assertion type="Simple Contains" id="dab07154-bbdf-4430-8c57-bb3e7009849d" name="Contains">
+							<con:configuration>
+								<token>Coimbatore</token>
+								<ignoreCase>false</ignoreCase>
+								<useRegEx>false</useRegEx>
+							</con:configuration>
+						</con:assertion>
+						<con:assertion type="XPath Match" id="376f4dbf-8bec-4796-ab26-30702ee0e044" name="XPath Match">
+							<con:configuration>
+								<path>/trains/train[1]/departCity</path>
+								<content>Chennai</content>
+								<allowWildcards>false</allowWildcards>
+								<ignoreNamspaceDifferences>false</ignoreNamspaceDifferences>
+								<ignoreComments>false</ignoreComments>
+							</con:configuration>
+						</con:assertion>
+						<con:credentials>
+							<con:authType>No Authorization</con:authType>
+						</con:credentials>
+						<con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+						<con:jmsPropertyConfig />
+						<con:parameters />
+					</con:restRequest>
+				</con:config>
+			</con:testStep>
+			<con:testStep type="groovy" name="GroovyScript1" id="46cf4f94-f665-49fe-9390-63ae2319d496">
+				<con:settings />
+				<con:config>
+					<script>log.info "ViewTestCase : Passed"
+testRunner.runTestStepByName("Request1")</script>
+				</con:config>
+			</con:testStep>
+			<con:properties />
+		</con:testCase>
+		<con:properties />
+	</con:testSuite>
+	<con:properties />
+	<con:wssContainer />
+	<con:oAuth2ProfileContainer />
+	<con:oAuth1ProfileContainer />
+</con:soapui-project>

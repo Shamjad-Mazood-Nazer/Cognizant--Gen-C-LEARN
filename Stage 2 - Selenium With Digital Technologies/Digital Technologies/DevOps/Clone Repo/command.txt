@@ -1,0 +1,8 @@
+# Initialize Git
+git init 
+# Clone the repository
+git clone -b master http://student1:studentpassword@localhost:9080/student1/test1.git 
+git branch
+git init 
+git branch DEV_feature
+git checkout DEV_feature

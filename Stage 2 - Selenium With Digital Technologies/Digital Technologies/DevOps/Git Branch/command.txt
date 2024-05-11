@@ -1,0 +1,11 @@
+# git initialization
+git init
+ 
+# Create a branch named "DEV_feature"
+git branch DEV_feature
+ 
+# Switch to this new branch using checkout statement
+git checkout DEV_feature
+ 
+# Check the current branch
+git branch
